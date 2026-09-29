@@ -5,7 +5,13 @@ pipeline {
         timestamps()
         disableConcurrentBuilds()
         timeout(time: 40, unit: 'MINUTES')
-    }    
+    }  
+
+    environment {
+        APP_NAME = 'my-maven-app'
+        
+    }
+    
     
     stages {
         
