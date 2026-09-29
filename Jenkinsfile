@@ -1,5 +1,11 @@
 pipeline {
-    agent any    
+    agent any
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+        timeout(time: 40, unit: 'MINUTES')
+    }    
     
     stages {
         
@@ -22,5 +28,20 @@ pipeline {
             }
         }
     }
+
+ post {
+          
+          success {
+              echo "Deploiement terminé avec Succés pour ${APP_NAME} !!!"
+          }
+          
+         failure {
+              echo "Deploiement terminé pour ${APP_NAME} a echoué, Vérifier les Logs!!!" 
+          }
+          always {
+               cleanWs() 
+          }
+          
+      }
 
 }
