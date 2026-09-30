@@ -1,12 +1,12 @@
 - name: play
-  hosts: localhost
+  hosts: all
   become: true
 
   tasks:
 
     - name: deploy app
       copy:
-        src: /var/lib/jenkins/workspace/job_jenkins_with_ansible_plugin/target/myapp-g33.war
+        src: target/myapp-g33.war
         dest: /opt/tomcat/webapps/
 
 
