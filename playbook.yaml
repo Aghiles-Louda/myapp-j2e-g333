@@ -1,0 +1,12 @@
+---
+- name: play
+  hosts: localhost
+  become: true
+
+  tasks:
+
+    - name: deploy app
+      copy:
+        src: /home/efi/ansible_jenkins/myapp-g33.war
+        dest: /opt/tomcat/webapps/
+
