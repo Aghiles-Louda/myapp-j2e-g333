@@ -1,0 +1,16 @@
+- name: play
+  hosts: localhost
+  become: true
+
+  tasks:
+
+    - name: deploy app
+      copy:
+        src: /var/lib/jenkins/workspace/job_jenkins_with_ansible_plugin/target/myapp-g33.war
+        dest: /opt/tomcat/webapps/
+
+
+    - name: reload tomcat
+      service:
+        name: tomcat
+        state: restarted
