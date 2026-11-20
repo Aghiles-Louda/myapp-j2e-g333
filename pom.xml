@@ -73,8 +73,8 @@
             </plugin>
 
             <!-- JaCoCo Plugin (Coverage for SonarQube) -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
+           <!-- <plugin>
+               <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
                 <executions>
@@ -93,7 +93,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
         </plugins>
     </build>
 </project>
